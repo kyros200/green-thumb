@@ -1,7 +1,7 @@
 {
-  "name": "front-end-test-2",
-  "version": "1.0.0",
-  "description": "Simple Parcel Sandbox",
+  "name": "green-thumb-najjar",
+  "version": "0.1.0",
+  "description": "Project for Red Ventures",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open"
