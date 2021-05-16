@@ -1,3 +1,132 @@
+@import "dropdown.scss";
+
 .container-result {
+    width: 100%;
     background-color: $bottom-background;
+
+    display: flex;
+    justify-content: center;
+
+    .content-result {
+        width: 60%;
+
+        display: flex;
+
+        .no-result {
+            display: none;
+            width: 100%;
+            padding-top: 53px;
+            padding-bottom: 68px;
+            .no-result-text {
+                color: $no-result-text;
+                .no-result-text-main {
+                    width: 442px;
+                    margin-top: 21px;
+                    margin-bottom: 13px;
+                    font-size: 45px;
+                }
+                .no-result-text-normal {
+                    width: 221px;
+                    font-size: 16px;
+                    line-height: 27px;
+                }
+            }
+
+            .no-result-image {
+                margin-left: 110px;
+            }
+        }
+
+        .result {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            .result-image {
+                margin-top: 37px;
+                margin-bottom: 20px;
+                img {
+                    height: 78px;
+                }
+            }
+
+            .result-text {
+                font-size: 55px;
+                line-height: 67px;
+                margin-bottom: 55px;
+            }
+
+            .result-back {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border: 1px solid $primary-color;
+                border-radius: 25px;
+
+                margin-top: 60px;
+                margin-bottom: 128px;
+
+                .result-back-icon {
+                    margin: 14px 18px 14px 0px;
+                }
+
+                .result-back-text {
+                    color: $go-back-text;
+                }
+            }
+        }
+
+        .open {
+            display: flex;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content-result {
+        width: 100% !important;
+        padding: 0px 35px;
+        flex-direction: column;
+
+        .no-result {
+            flex-direction: column;
+            padding-bottom: 32px !important;
+            .no-result-text {
+                flex-direction: column;
+                .no-result-text-main {
+                    width: 100% !important;
+                    margin-top: 47px;
+                }
+                .no-result-text-normal {
+                    margin-bottom: 38px;
+                }
+            }
+            .no-result-image {
+                display: flex;
+                justify-content: center;
+                margin-left: 0px !important;
+            }
+        }
+
+        .result {
+            .result-image {
+                margin-top: 32px !important;
+                margin-bottom: 16px !important;
+                img {
+                    height: 72px !important;
+                }
+            }
+            
+            .result-text {
+                font-size: 40px !important;
+                line-height: 49px !important;
+                margin-bottom: 16px !important;
+            }
+
+            .result-back {
+                margin-top: 32px !important;
+                margin-bottom: 22px !important;
+            }
+        }
+    }
 }
