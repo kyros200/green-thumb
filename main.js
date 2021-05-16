@@ -1,6 +1,8 @@
-import { plantpersonDesktop, plantpersonMobile } from "/js/plantperson";
+import { filterLogic } from "./js/dropdown";
+import { formatHeader } from "./js/plantperson";
 
 document.addEventListener('DOMContentLoaded', function(){
-    plantpersonDesktop();
-    plantpersonMobile();
+    formatHeader();
+
+    filterLogic();
 }, false);

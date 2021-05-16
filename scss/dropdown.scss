@@ -1,0 +1,144 @@
+@import "colors.scss";
+
+.dropdown {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.dropdown-selected {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 40px;
+    padding: 0 22px;
+
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 27px;
+
+	color: $dropdown-text;
+	background: $middle-background;
+
+	cursor: pointer;
+
+	border: 1px solid $dropdown-text;
+    border-radius: 19px;
+}
+
+.options {
+	position: absolute;
+	display: block;
+
+	top: 100%;
+	left: 0;
+	right: 0;
+
+	border: 1px solid $dropdown-text;
+    border-radius: 0px 0px 19px 19px;
+	border-top: 0;
+
+	background: #fff;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.dropdown.open {
+    .dropdown-selected {
+        border-radius: 19px 19px 0px 0px;
+        border-bottom: 0px;
+    }
+	.options {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	}
+}
+
+.option {
+	position: relative;
+	display: flex;
+    align-items: center;
+    height: 40px;
+
+	padding: 0 22px;
+
+	font-size: 14px;
+	font-weight: 300;
+	color: $dropdown-text;
+	line-height: 27px;
+
+	cursor: pointer;
+
+    transition: 0.3s;
+    
+	&:hover {
+		cursor: pointer;
+		background-color: $terciary-color;
+        color: $middle-background;
+
+        &:last-child {
+            border-radius: 0px 0px 19px 19px;
+        }
+	}
+
+}
+
+.option.selected {
+	color: $middle-background;
+	background-color: $terciary-color;
+
+    &:last-child {
+        border-radius: 0px 0px 19px 19px;
+    }
+}
+
+.arrow {
+	position: relative;
+	height: 15px;
+	width: 15px;
+
+	&::before {
+		content: "";
+		position: absolute;
+
+		bottom: 0px;
+		left: -5px;
+
+		width: 0.15rem;
+		height: 100%;
+
+		transform: rotate(45deg);
+		background-color: $dropdown-text;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+
+		bottom: 0px;
+		left: 5px;
+
+		width: 0.15rem;
+		height: 100%;
+        
+		transform: rotate(-45deg);
+		background-color: $dropdown-text;
+	}
+}
+
+.open {
+	.arrow {
+		&::before {
+			left: -5px;
+			transform: rotate(-45deg);
+		}
+		&::after {
+			left: 5px;
+			transform: rotate(45deg);
+		}
+	}
+}

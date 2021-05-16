@@ -11,4 +11,12 @@ const plantpersonMobile = () => {
     b.setAttribute("width", `${593 - (window.innerWidth * 1.286) + 100 }px`);
 }
 
-export { plantpersonDesktop, plantpersonMobile }
+const formatHeader = () => {
+    if(window.innerWidth < 600) {
+        plantpersonMobile();
+    } else {
+        plantpersonDesktop();
+    }
+}
+
+export { formatHeader }

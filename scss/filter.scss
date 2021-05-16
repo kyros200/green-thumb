@@ -1,3 +1,58 @@
+@import "dropdown.scss";
+
 .container-filter {
+    width: 100%;
     background-color: $middle-background;
+
+    display: flex;
+    justify-content: center;
+
+    .content-filter {
+        width: 60%;
+
+        display: flex;
+        justify-content: space-between;
+
+        .box-filter {
+            width: 30%;
+            margin-top: 60px;
+            margin-bottom: 52px;
+            .image-filter {
+                margin-bottom: 12px;
+                img {
+                    object-fit: contain;
+                }
+                &.wateringcan {
+                    img {
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+            .text-filter {
+                height: 44px;
+                margin-bottom: 24px;
+                color: #848484;
+            }
+            .dropdown-filter {
+                position: relative;
+                user-select: none;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content-filter {
+        flex-direction: column;
+
+        .box-filter {
+            margin-top: 0px !important;
+            width: 100% !important;
+
+            &:first-child {
+                margin-top: 20px !important;
+            }
+        }
+    }
 }
