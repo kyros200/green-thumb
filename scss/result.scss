@@ -12,6 +12,8 @@
 
         display: flex;
 
+        box-sizing: border-box;
+
         .no-result {
             display: none;
             width: 100%;
@@ -55,29 +57,240 @@
                 margin-bottom: 55px;
             }
 
-            .result-back {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .result-plants-desktop {
+                display: none;
 
-                border: 1px solid $primary-color;
-                border-radius: 25px;
+                &.active {
+                    display: grid;
+                    grid-row-gap: 20px;
+                    grid-column-gap: 25px;
+                    grid-template-columns: 25% 25% 25% 25%;
 
+                    .result-plant-box {
+                        background-color: white;
+                        border-radius: 5px;
+                        height: 245px;
+
+                        position: relative;
+
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .top-side {
+                            display: flex;
+                            justify-content: center;
+                            margin: 10px 0px;
+
+                            img {
+                                width: 160px;
+                                height: 160px;
+                                object-fit: contain;
+                            }
+                        }
+
+                        .bottom-side {
+                            display: flex;
+                            flex-direction: column;
+
+                            .plant-name {
+                                color: $green-name;
+                                padding: 0px 20px;
+                            }
+
+                            .plant-info {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 0px 20px;
+                                padding-top: 5px;
+
+                                .plant-price {
+                                    color: $green-price;
+                                }
+
+                                .plant-specs {
+                                    img {
+                                        height: 20px;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.favorite {
+                            &::after {
+                                content: "✨ Staff favorite";
+                                position: absolute;
+                                width: fit-content;
+                                padding: 15px;
+                                font-size: 18px;
+                                font-weight: bold;
+                                color: white;
+                                background: $terciary-color;
+                                border-radius: 0px 999px 999px 0px;
+                                left: 0px;
+                                top: 30px;
+                            }
+
+                            .top-side {
+                                margin: 40px 0px 10px 0px;
+                                img {
+                                    height: 320px;
+                                }
+                            }
+    
+                            .bottom-side {
+                                flex-direction: row;
+                                height: 100%;
+
+                                .plant-name {
+                                    display: flex;
+                                    align-items: center;
+
+                                    width: 190px;
+                                    margin-left: 30px;
+                                    font-size: 35px;
+                                }
+    
+                                .plant-info {
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: flex-end;
+                                    width: 100%;
+    
+                                    .plant-price {
+                                        font-size: 24px;
+                                        padding-bottom: 16px;
+                                    }
+
+                                    .plant-specs {
+                                        img {
+                                            height: 30px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .favorite {
+                        grid-column: 1 / span 2;
+                        grid-row: 1 / span 2;
+                        height: 510px;
+                    }
+                }
+            }
+
+            .result-plants-mobile {
+                display: none;
+
+                &.active {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    overflow-x: scroll;
+                    padding: 0px 35px;
+
+                    .result-plant-box {
+                        background-color: white;
+                        border-radius: 5px;
+
+                        width: 100%;
+                        height: 320px;
+
+                        margin-right: 16px;
+                        &:last-child {
+                            margin-right: 0px !important;
+                        }
+
+                        position: relative;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .top-side {
+                            display: flex;
+                            justify-content: center;
+                            margin: 10px 0px;
+
+                            img {
+                                width: 220px;
+                                height: 220px;
+                                object-fit: contain;
+                            }
+                        }
+
+                        .bottom-side {
+                            display: flex;
+                            flex-direction: column;
+
+                            .plant-name {
+                                color: $green-name;
+                                padding: 0px 20px;
+                            }
+
+                            .plant-info {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 0px 20px 15px 20px;
+                                padding-top: 5px;
+
+                                .plant-price {
+                                    color: $green-price;
+                                }
+
+                                .plant-specs {
+                                    img {
+                                        height: 20px;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.favorite {
+                            &::after {
+                                content: "✨ Staff favorite";
+                                position: absolute;
+                                width: fit-content;
+                                font-size: 13px;
+                                padding: 8px 15px;
+                                font-weight: bold;
+                                color: white;
+                                background: $terciary-color;
+                                border-radius: 0px 999px 999px 0px;
+                                left: 0px;
+                                top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .result-back-button-container {
                 margin-top: 60px;
                 margin-bottom: 128px;
-
-                .result-back-icon {
-                    margin: 14px 18px 14px 0px;
-                }
-
-                .result-back-text {
-                    color: $go-back-text;
+                
+                .result-back-button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    border: 1px solid $primary-color;
+                    border-radius: 25px;
+    
+    
+                    .result-back-icon {
+                        margin: 14px 18px 14px 0px;
+                    }
+    
+                    .result-back-text {
+                        color: $go-back-text;
+                    }
                 }
             }
         }
 
         .open {
-            display: flex;
+            display: flex !important;
         }
     }
 }
@@ -123,9 +336,8 @@
                 margin-bottom: 16px !important;
             }
 
-            .result-back {
-                margin-top: 32px !important;
-                margin-bottom: 22px !important;
+            .result-back-button-container {
+                margin: 32px 20px 22px 20px !important;
             }
         }
     }

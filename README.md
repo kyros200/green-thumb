@@ -22,6 +22,6 @@ The project was meant to be done in plain ***HTML, CSS & JS***, and i couldn't u
 
 ## Final Thoughts
 
-The Challenge was fun to do, but some things did bother me: some color and position inconsistencies. This took me more time than I imagined when developing.
+The Challenge was fun to do, but some things did bother me: some color and position inconsistencies. This took me more time than I imagined when developing. Also there is no icon for High sunlight in the folder of images (only on Figma).
 
 The most interesting part for me was doing a custom dropdown from pure JS. That was a blast and I was happy with the result.

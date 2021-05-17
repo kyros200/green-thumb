@@ -9,18 +9,12 @@
 
 body {
     font-family: $main-font;
-    background-color: red;
     width: 100%;
 
     min-height: 100% !important;
     height: 100%;
     margin: 0;
 }
-
-// *::selection {
-//     color:#2B6535;
-//     background: #0AC9B0;
-// }
 
 .container {
     display: flex;
