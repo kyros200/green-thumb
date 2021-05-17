@@ -18,7 +18,10 @@ The project was meant to be done in plain ***HTML, CSS & JS***, and i couldn't u
 * Finished Filter part. Biggest challenge was for custom dropdown.
 * Organized files. Now each file is for a specific purpose.
 
-## Day 3
+## Day 3 (7h)
+
+* Finished Result part. Whole project is now done.
+* Polish to be more consistent with Figma (Mainly Mobile).
 
 ## Final Thoughts
 
